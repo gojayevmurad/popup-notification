@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+.sweetbox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  background-color: #fff;
+  padding: 30px;
+  min-width: 400px;
+  transition: 0.2s;
+  z-index: 2;
+  border-radius: 0;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  opacity: 1;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 3px #a18888;
+}
+.sweetbox .p-two {
+  font-size: 2rem;
+  font-weight: 600;
+  color: rgba(69, 68, 68, 0.8588235294);
+}
+.sweetbox .circle {
+  width: 4.1rem;
+  height: 4.1rem;
+  background-color: #fff;
+  border: 4px solid #c9dae1;
+  font-size: 3rem;
+  color: #87adbd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 40px;
+}
+.sweetbox .circle p.rotate {
+  animation: rotate 0.4s linear;
+}
+.sweetbox.hidden {
+  transform: translate(-50%, -50%) scale(0.5);
+  z-index: -1;
+  opacity: 0;
+}
+.sweetbox__btn--ok {
+  background-color: #7066e0;
+  color: #fff;
+  border: none;
+  outline: 3px solid rgba(112, 102, 224, 0.4196078431);
+  font-size: 1.3rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.sweetbox__btn--ok:hover {
+  background-color: #4135c4;
+}
+
+.overlay {
+  background-color: rgba(103, 98, 98, 0.2588235294);
+  -webkit-backdrop-filter: blur(1px) grayscale(0.1);
+          backdrop-filter: blur(1px) grayscale(0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  opacity: 1;
+}
+.overlay.hidden {
+  z-index: -1;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.fade-in {
+  animation-delay: 0.1s;
+  animation: fadein 0.3s linear;
+}
+
+.buttons {
+  width: 500px;
+  background-color: #fff;
+  border: 1px solid black;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 2px rgb(80, 79, 79);
+}
+.buttons .sweet {
+  height: 40px;
+  width: 60px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.buttons .sweet:hover {
+  background-color: rgba(128, 128, 128, 0.525);
+  color: #fff;
+}
+
+.for--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+body {
+  background-image: url(https://codetheweb.blog/assets/img/posts/css-advanced-background-images/cover.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@keyframes fadein {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  25% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  75% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}/*# sourceMappingURL=style.css.map */
