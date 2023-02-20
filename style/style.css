@@ -54,12 +54,22 @@
 .sweetbox .circle.error {
   border-color: #f27474;
   color: #f27474;
+  animation: errorCircle 0.3s linear;
 }
 .sweetbox .circle p.error {
   animation: fromBottom 0.3s linear;
 }
-.sweetbox .circle.error {
-  animation: errorCircle 0.3s linear;
+.sweetbox .circle.shake {
+  border-color: #3fc3ee;
+}
+.sweetbox .circle .shake {
+  color: #3fc3ee;
+  animation: shaketext 0.5s linear;
+}
+.sweetbox .empty {
+  height: 70vh;
+  width: 100%;
+  background-color: #fff;
 }
 .sweetbox.hidden {
   transform: translate(-50%, -50%) scale(0.5);
@@ -76,9 +86,39 @@
   cursor: pointer;
   transition: 0.2s;
   border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
 }
 .sweetbox__btn--ok:hover {
   background-color: #4135c4;
+}
+.sweetbox__btn--ok.dark {
+  background-color: gray;
+  outline: 3px solid rgba(86, 81, 81, 0.381);
+}
+.sweetbox__btn--ok.dark:hover {
+  background-color: rgb(73, 73, 73);
+}
+.sweetbox__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.bg-gray {
+  background-color: rgba(168, 165, 165, 0.571);
+  color: #b9316f !important;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .overlay {
@@ -103,32 +143,6 @@
 .fade-in {
   animation-delay: 0.1s;
   animation: fadein 0.3s linear;
-}
-
-.buttons {
-  width: 500px;
-  background-color: #fff;
-  border: 1px solid black;
-  margin: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 15px 2px rgb(80, 79, 79);
-}
-.buttons .sweet {
-  height: 40px;
-  width: 60px;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.buttons .sweet:hover {
-  background-color: rgba(128, 128, 128, 0.525);
-  color: #fff;
 }
 
 .for--center {
@@ -191,4 +205,52 @@ body {
   100% {
     transform: rotateX(0deg);
   }
+}
+@keyframes shaketext {
+  0% {
+    transform: rotate(0);
+  }
+  12% {
+    transform: rotate(-20deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  87% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.buttons {
+  width: 500px;
+  background-color: #fff;
+  border: 1px solid black;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 2px rgb(80, 79, 79);
+}
+.buttons .sweet {
+  height: 40px;
+  width: 80px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.buttons .sweet:hover {
+  background-color: rgba(128, 128, 128, 0.525);
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */
