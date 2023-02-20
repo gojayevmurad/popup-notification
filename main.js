@@ -1,3 +1,4 @@
+console.clear();
 let sweetBox = document.querySelector(".sweetbox");
 
 document.querySelectorAll(".sweet").forEach((el, index) => {
@@ -9,7 +10,28 @@ document.querySelectorAll(".sweet").forEach((el, index) => {
         break;
       case 1:
         changeDisplay();
-        sweetBox2()
+        sweetBox2();
+        break;
+      case 2:
+        changeDisplay();
+        sweetBox3();
+        break;
+      case 3:
+        changeDisplay();
+        sweetBox3();
+        break;
+      case 4:
+        changeDisplay();
+        sweetBox4();
+        break;
+      case 5:
+        changeDisplay();
+        sweetBox5();
+        break;
+      case 6:
+        changeDisplay();
+        sweetBox6();
+        break;
     }
   });
 });
@@ -36,5 +58,23 @@ function sweetBox2() {
     <p class="p-two">The Internet?</p>
     <p class="p-one">That thing is still around?</p>
     <button onclick="changeDisplay()" class="sweetbox__btn--ok">OK</button>
+  `;
+}
+function sweetBox3() {
+  sweetBox.innerHTML = `
+  <div class="circle error">
+  <p class="error ">X</p>
+</div>
+<p class="p-two">
+  Oops...
+</p>
+<p class="p-one">
+  Something went wrong!
+</p>
+<button onclick="changeDisplay()" class="sweetbox__btn--ok">
+  OK
+</button>
+<hr style="width: 100%;">
+<a href="#">Why do I have this issue?</a>
   `;
 }

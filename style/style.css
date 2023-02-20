@@ -46,9 +46,20 @@
   align-items: center;
   border-radius: 50%;
   padding: 40px;
+  overflow: hidden;
 }
 .sweetbox .circle p.rotate {
   animation: rotate 0.4s linear;
+}
+.sweetbox .circle.error {
+  border-color: #f27474;
+  color: #f27474;
+}
+.sweetbox .circle p.error {
+  animation: fromBottom 0.3s linear;
+}
+.sweetbox .circle.error {
+  animation: errorCircle 0.3s linear;
 }
 .sweetbox.hidden {
   transform: translate(-50%, -50%) scale(0.5);
@@ -64,6 +75,7 @@
   padding: 10px 15px;
   cursor: pointer;
   transition: 0.2s;
+  border-radius: 5px;
 }
 .sweetbox__btn--ok:hover {
   background-color: #4135c4;
@@ -156,5 +168,27 @@ body {
   }
   100% {
     transform: rotateY(360deg);
+  }
+}
+@keyframes fromBottom {
+  0% {
+    transform: scale(0.4) translateY(100%);
+  }
+  50% {
+    transform: scale(0.8) translateY(80%);
+  }
+  70% {
+    transform: scale(0.6) translateY(70%);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+@keyframes errorCircle {
+  0% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
   }
 }/*# sourceMappingURL=style.css.map */
