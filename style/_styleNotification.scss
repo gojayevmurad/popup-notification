@@ -1,0 +1,209 @@
+// GOOGLE FONTS POPPINS
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #34495e;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notifications {
+  position: fixed;
+
+  width: 350px;
+  :where(.notification, div) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &.notifications--topright {
+    top: 25px;
+    right: 30px;
+  }
+
+  &.notifications--topleft {
+    top: 25px;
+    left: 30px;
+  }
+
+  &.notifications--bottomright {
+    bottom: 25px;
+    right: 25px;
+  }
+
+  &.notifications--bottomleft {
+    left: 30px;
+    bottom: 25px;
+  }
+
+  &.right {
+    .notification {
+      animation: intro-right 0.3s linear;
+    }
+  }
+
+  &.left {
+    .notification {
+      animation: intro-left 0.3s linear;
+    }
+  }
+
+  .notification {
+    font-size: 20px;
+    font-weight: 400;
+    user-select: none;
+    background-color: #fff;
+    padding: 8px 10px 8px 16px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+
+    @keyframes intro-right {
+      0% {
+        transform: translateX(100%);
+      }
+      25% {
+        transform: translateX(-10px);
+      }
+      50% {
+        transform: translateX(10px);
+      }
+      100% {
+        transform: translateX(-10px);
+      }
+    }
+
+    @keyframes intro-left {
+      0% {
+        transform: translateX(-100%);
+      }
+      25% {
+        transform: translateX(10px);
+      }
+      50% {
+        transform: translateX(-10px);
+      }
+      100% {
+        transform: translateX(10px);
+      }
+    }
+    .content {
+      gap: 10px;
+
+      svg {
+        width: 20px;
+      }
+    }
+
+    .cancel {
+      cursor: pointer;
+      color: rgb(116, 107, 107);
+      transition: 0.3s;
+    }
+    .cancel:hover {
+      color: rgba(0, 0, 0, 1);
+    }
+
+    .line {
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      bottom: 0;
+      left: 0;
+      animation: timer linear;
+    }
+
+    @keyframes timer {
+      100% {
+        width: 0;
+      }
+    }
+  }
+}
+
+.right .notification.hide {
+  animation: outroRightNotification 0.1s linear !important;
+}
+
+.left .notification.hide{
+  animation: outroLeftNotification 0.1s linear !important;
+
+}
+
+@keyframes outroLeftNotification {
+  100% {
+    transform: translateX(calc(-100% - 30px));
+  }
+}
+
+@keyframes outroRightNotification {
+  100% {
+    transform: translateX(calc(100% + 30px));
+  }
+}
+
+button#success,
+.notification#success .line {
+  background-color: #0abf30;
+}
+
+button#error,
+.notification#error .line {
+  background-color: #e24d4c;
+}
+button#info,
+.notification#info .line {
+  background-color: #3498db;
+}
+button#warning,
+.notification#warning .line {
+  background-color: #e9bd0c;
+}
+
+.x10 {
+  border-top: 3px solid gray;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  form {
+    display: flex;
+    justify-content: space-between;
+    row-gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    input,
+    select {
+      width: 48%;
+      height: 40px;
+      font-size: 20px;
+    }
+    button {
+      height: 45px;
+      width: 80px;
+      border: none;
+      outline: none;
+      transition: 0.3s;
+      cursor: pointer;
+      &:hover {
+        background-color: gray;
+        color: #fff;
+      }
+    }
+  }
+}

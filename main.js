@@ -1,4 +1,3 @@
-console.clear();
 let sweetBox = document.querySelector(".sweetbox");
 
 document.querySelectorAll(".sweet").forEach((el, index) => {

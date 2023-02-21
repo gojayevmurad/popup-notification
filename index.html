@@ -13,6 +13,10 @@
     <title>Document</title>
   </head>
   <body>
+    <ul class="notifications right notifications--topright"></ul>
+    <ul class="notifications left notifications--topleft"></ul>
+    <ul class="notifications right notifications--bottomright"></ul>
+    <ul class="notifications left notifications--bottomleft"></ul>
     <div class="for--center">
       <div class="buttons">
         <button class="sweet">TRY ME 1</button>
@@ -30,14 +34,32 @@
         <button class="sweet">TRY ME --</button>
         <button class="sweet">TRY ME --</button>
         <button class="sweet">TRY ME --</button>
+        <div class="x10">
+          <form>
+            <select name="type" id="type">
+              <option value="error">ERROR</option>
+              <option value="success">SUCCESS</option>
+              <option value="warning">WARNING</option>
+              <option value="info">INFO</option>
+            </select>
+            <select name="position" id="position">
+              <option value="topright">TOP RIGHT</option>
+              <option value="topleft">TOP LEFT</option>
+              <option value="bottomright">BOTTOM RIGHT</option>
+              <option value="bottomleft">BOTTOM LEFT</option>
+            </select>
+            <input type="number" value="3000" min="3000" name="time" class="time" id="time" placeholder="ms"/>
+            <input type="text" class="text" name="text" id="text" placeholder="Notification Text" />
+            <button class="call--notification" type="submit">SUBMIT</button>
+          </form>
+        </div>
       </div>
     </div>
 
-    <div class="sweetbox hidden">
-
-    </div>
+    <div class="sweetbox hidden"></div>
     <div class="overlay hidden"></div>
 
+    <script src="notifications.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
